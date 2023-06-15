@@ -1,0 +1,97 @@
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 40px;
+    width: 400px;
+    margin: 0 auto;   
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.353);
+    margin-top: 30px;
+}
+  
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+  
+.card-header h2 {
+      margin: 0;
+}
+  
+.card-body {
+    margin-bottom: 20px;
+}
+  
+.form-group {
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+  
+.form-label {
+    font-weight: bold;
+}
+  
+.form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.btn-primary {
+    margin-bottom: 50px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    margin: 20px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #dc3545;
+}
+
+small {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+  }
+
+  
+  
+
+  

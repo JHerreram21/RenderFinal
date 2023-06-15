@@ -1,0 +1,7 @@
+<%= form_with model: [@question, @answer], url: question_answers_path(@question) do |form| %>
+  <%= form.label :content %>
+  <%= form.text_area :content, rows: 5, class: "form-control", required: true %>
+    
+  <%= form.submit "Create", class: "btn btn-primary" %>
+<% end %>
+  

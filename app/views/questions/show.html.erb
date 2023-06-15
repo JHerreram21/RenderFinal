@@ -1,0 +1,55 @@
+
+<div class="question">
+  <div class="question-header">
+    <p class="question-creator"> Creada por: <%= @question.user_name %></p>
+    <h1><%= @question.title %></h1>
+    <p>Producto relacionado: <%= link_to @question.product.name, product_path(@question.product) %></p>
+  </div>
+  <div class="question-content">
+    <p><%= @question.content %></p>
+  </div>
+  <% if current_user.admin? %>
+    <div class="question-actions">
+      <%= button_to 'Eliminar Pregunta', question_path(@question), method: :delete, data: { confirm: '¿Estás seguro que deseas eliminar esta pregunta?' }, class: "delete-button" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="answers-container">
+  <% @question.answers.each do |answer| %>
+    <div class="answer">
+      <div class="answer-header">
+        <p class="answer-creator">Contestado por: <%= answer.user.name %></p>
+      </div>
+      <div class="answer-content">
+        <p><%= answer.content %></p>
+        <% if current_user.admin? || current_user == answer.user %>
+          <div class="answer-actions">
+            <%= button_to 'Eliminar Respuesta', question_answer_path(@question, answer), method: :delete, data: { confirm: '¿Estás seguro que deseas eliminar esta respuesta?' }, class: "delete-button" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= form_with(model: [@question, @answer], url: question_answers_path(@question), local: true) do |form| %>
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :respuesta %>
+    <%= form.text_area :content, class: "content" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Publicar", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to 'Volver', questions_path, class: "back-link" %>
+
+<%= stylesheet_link_tag 'preguntas_show', media: 'all' %>

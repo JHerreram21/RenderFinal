@@ -1,0 +1,49 @@
+<h1>Solicitudes Aceptadas</h1>
+
+<% if @solicitudes_aceptadas.present? && @solicitudes_aceptadas.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Usuario</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @solicitudes_aceptadas.each do |solicitud| %>
+        <tr>
+          <td><%= solicitud.nombre_producto %></td>
+          <td><%= solicitud.nombre %></td>
+          <td><%= solicitud.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No hay solicitudes aceptadas.</p>
+<% end %>
+
+<h1>Solicitudes Rechazadas</h1>
+
+<% if @solicitudes_rechazadas.present? && @solicitudes_rechazadas.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Usuario</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @solicitudes_rechazadas.each do |solicitud| %>
+        <tr>
+          <td><%= solicitud.nombre_producto %></td>
+          <td><%= solicitud.nombre %></td>
+          <td><%= solicitud.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No hay solicitudes rechazadas.</p>
+<% end %>

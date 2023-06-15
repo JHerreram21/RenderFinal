@@ -1,0 +1,24 @@
+<% if @solicitudes.present? %>
+    <table>
+    <thead>
+        <tr>
+        <th>Id solicitud</th>
+        <th>Producto solicitado</th>
+        <th>Estado</th>
+        <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @solicitudes.each do |solicitud| %>
+        <tr>
+            <td><%= solicitud.id %></td>
+            <td><%= solicitud.nombre_producto %></td>
+            <td><%= solicitud.estado %></td>
+            <td><%= button_to 'Eliminar', eliminar_solicitud_path(solicitud), method: :delete, class:"delete"%></td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
+<% else %>
+  <p>No haz hecho solicitudes.</p>
+<% end %>

@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Editar producto</h4>
+  </div>
+  <div class="card-body">
+    <%= form_for @product, url: product_path(@product), method: :patch do |form| %>
+    
+      <% if @product.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@product.errors.count, "problema") %> impidieron guardar este producto:</h2>
+          <ul>
+            <% @product.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+  
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+  
+      <div class="field">
+        <%= form.label :category %>
+        <%= form.select :category, ["CR7", "Leo", "Ney"], { prompt: "Seleccione una categoría" }, class: 'form-control' %>
+      </div>
+  
+      <div class="field">
+        <%= form.label :price %>
+        <%= form.number_field :price, class: 'form-control' %>
+      </div>
+  
+      <div class="field">
+        <%= form.label :description %>
+        <%= form.text_area :description, class: 'form-control' %>
+      </div>
+  
+      <div class="actions text-center">
+        <%= form.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  
+    <%= link_to 'Volver', products_path, class: 'btn btn-secondary' %>
+  </div>
+</div>
+
+<%= stylesheet_link_tag 'products_form', media: 'all' %>

@@ -1,0 +1,55 @@
+.card.question-form {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.353);
+}
+  
+.card.question-form .card-body {
+    display: flex;
+    flex-direction: column;
+}
+  
+.form-group {
+    margin-bottom: 10px;
+}
+  
+.form-label {
+    font-weight: bold;
+}
+  
+.form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.actions {
+    text-align: center;
+    margin-top: 10px;
+}
+  
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+  
+.btn-block {
+    display: block;
+    width: 100%;
+}
+  
+  

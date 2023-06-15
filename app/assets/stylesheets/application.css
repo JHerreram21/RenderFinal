@@ -1,0 +1,251 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #E8E8E8;
+  padding-bottom: 100px;
+}
+
+/* Estilos del encabezado */
+.container-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-titulo h1 {
+  font-size: 32px;
+  color: #333;
+  text-align: center;
+}
+
+header {
+  background-color: #294d735f;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+/* Footer */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.353);
+  left: 0;
+}
+
+
+/*Estilo nabvar */
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.353);
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.nav-link {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #867f7f;
+}
+
+.navbar-nav .nav-item:last-child {
+  margin-right: 0;
+}
+
+/* Estilos de la sección de bienvenida */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pagina-bienvenida {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.pagina-bienvenida img {
+  height: 300px;
+  width: 300px;
+  margin: 20px;
+  border-radius: 32px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.353);
+}
+
+.pagina-bienvenida p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.notice {
+  color: green;
+}
+
+.alert {
+  color: #dc3545;
+}
+
+ a{
+  margin: 5px;
+ }
+ 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.delete{
+  background-color: #dc3545;
+}
+
+.toggleBtn {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 32px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 10px #3642855c;
+  animation: waveEffect 2s infinite ease-in-out;
+  --box-shadow-color: #06070dde;
+}
+
+@keyframes waveEffect {
+  0% {
+    box-shadow: 0px 0px 10px 0px var(--box-shadow-color);
+  }
+  50% {
+    box-shadow: 0px 0px 20px 5px var(--box-shadow-color);
+  }
+  100% {
+    box-shadow: 0px 0px 10px 0px var(--box-shadow-color);
+  }
+}
+
+/*Dark mode*/
+.dark-mode{
+  background-color: #3e3e3e;
+}
+
+.dark-mode h1{
+  color: white;
+}
+
+.dark-mode h4{
+  color: white;
+}
+
+.dark-mode header{
+  background-color: #9d77cb;
+}
+
+.dark-mode .pagina-bienvenida img {
+  box-shadow: 0 0 10px rgba(251, 249, 249, 0.396);
+}
+
+.dark-mode .pagina-bienvenida p{
+  color: white;
+}
+
+.dark-mode .image-link p {
+  color: white;
+}
+
+.dark-mode .toggleBtn{
+  --box-shadow-color: #f5f4f7de;
+}
+
+.dark-mode .btn-warning{
+  background-color: #9d77cb;
+}
+
+.dark-mode .product {
+  box-shadow: 0 2px 4px rgba(240, 237, 237, 0.234);
+}
+
+.dark-mode .question-header h1{
+  color: #333;
+}
+
+.dark-mode .question {
+  border-radius: 6px;
+  border-color: #dc3545;
+}
+
+.dark-mode .field{
+  color: white;
+}
+
+.dark-mode .card-body .field {
+  color: #333;
+}
+
+.dark-mode .back-link{
+  color: #007bff;
+}
+
+.dark-mode .product-details h1{
+  color: #333;
+}
+
+.dark-mode .related-videos{
+  background-color: #565555f6;
+}

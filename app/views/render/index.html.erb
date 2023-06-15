@@ -1,0 +1,18 @@
+<main class="container">
+  <% if user_signed_in? %>
+      <p>Sesión iniciada como <%= current_user.name %></p>
+    <% else %>
+      <div class="pagina-bienvenida">
+        <%= image_tag 'm&c.png', class: 'mw-100' %>
+        <p><strong>¡Para acceder a los detalles de los productos debes iniciar sesión!</strong> </p>
+      </div>
+    <% end %>
+    
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    
+    <% if flash[:alert] %>
+      <p class="alert"><%= flash[:alert] %></p>
+    <% end %>
+</main>

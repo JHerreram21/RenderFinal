@@ -1,0 +1,12 @@
+<%= form_for @solicitud, url: solicitudes_path do |f| %>
+  <%= f.label :nombre %>
+  <%= f.text_field :nombre %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :producto_id %>
+  <%= f.collection_select :product_id, Product.all, :id, :name %>
+  
+  <%= f.submit 'Enviar solicitud' %>
+<% end %>

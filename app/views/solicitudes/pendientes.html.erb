@@ -1,0 +1,33 @@
+<h1>Solicitudes Pendientes</h1>
+<% if @solicitudes_pendientes.present? && @solicitudes_pendientes.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Producto</th>
+        <th>Nombre Usuario</th>
+        <th>Usuario</th>
+        <th>Estado</th>
+        <th>Acción</th>
+        <th>Acción</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @solicitudes_pendientes.each do |solicitud| %>
+        <tr>
+          <td><%= solicitud.id %></td>
+          <td><%= solicitud.nombre_producto %></td>
+          <td><%= solicitud.nombre %></td>
+          <td><%= solicitud.email %></td>
+          <td><%= solicitud.estado %></td>
+          <td><%= button_to 'aceptar', aceptar_solicitud_path(solicitud), method: :patch %></td>
+          <td><%= button_to 'rechazar', rechazar_solicitud_path(solicitud), method: :patch %></td>
+          <td><%= button_to 'Eliminar', eliminar_solicitud_path(solicitud), method: :delete, class: "delete"%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+    <p>No hay solicitudes pendientes.</p>
+<% end %>

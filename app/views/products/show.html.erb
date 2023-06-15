@@ -1,0 +1,63 @@
+<div class="main-container">
+  <% if @related_videos.present? %>
+    <div class="related-videos">
+      <h3>Videos relacionados</h3>
+      <% @related_videos.each do |video_id| %>
+        <div class="product-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video_id %>" frameborder="0" allowfullscreen></iframe>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+
+  <div class="container-producto">
+
+    <div class="product-details">
+      <h1><%= @product.name %></h1>
+      <div class="product-image">
+        <%= image_tag @product.image.url %>
+      </div>
+      <div class="product-info">
+        <p><strong>Precio:</strong> <%= number_to_currency(@product.price) %></p>
+        <p><strong>Descripción:</strong> <%= @product.description %></p>
+        <%= button_to "Solicitar", new_solicitude_path(@product), method: :get, class: "btn btn-primary" %>
+        <%= button_to 'Agregar reseña', new_product_review_path(@product), method: :get, class: "btn btn-primary" %>
+        <%= link_to "Preguntas del foro", questions_path(product_id: @product.id), class: "btn btn-primary" %>
+      </div>
+      <%= link_to 'Volver', products_path, class: "link-back" %>
+    </div>
+
+    <% @product.reviews.each do |review| %>
+      <div class="review">
+        <p>Reseña de: <%= review.user_name %></p>
+        <p>Calificación: <%= review.rating %></p>
+        <p><%= review.comment %></p>
+        <% if current_user.admin? || current_user.name == review.user_name %>
+          <%= button_to 'Eliminar', eliminar_review_path(review), method: :delete, class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <h1>Productos recomendados:</h1>
+  <div class="recommended-products">
+    <% if @recommended_products %>
+      <% @recommended_products.each do |recommended_product| %>
+        <div class="product">
+          <%= link_to product_path(recommended_product) do %>
+            <%= image_tag url_for(recommended_product.image) %>
+          <% end %>
+          
+          <div class="product-title">
+            <%= link_to recommended_product.name, product_path(recommended_product), class: "product-link" %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No hay más recomendaciones disponibles.</p>
+    <% end %>
+  </div>
+</div>
+
+<%= stylesheet_link_tag 'productos_show', media: 'all' %>

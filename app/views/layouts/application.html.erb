@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PSoftware50</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="container-titulo">
+        <%= link_to root_path do %>
+          <%= image_tag 'logo.png', alt: 'Logo', class: 'logo' %>
+        <% end %>
+        <h1>Posters Chetados</h1>
+        <div class="toggleBtn"></div>
+      </div>
+      <%= render 'layouts/navbar' %>
+    </header>
+   
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© <%= Time.now.year %> PSoftware50. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+  <%= javascript_include_tag 'toggle' %>
+</html>
+
+

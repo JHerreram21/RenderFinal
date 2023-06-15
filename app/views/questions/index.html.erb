@@ -1,0 +1,26 @@
+<%= link_to "Nueva pregunta", new_question_path, class: "btn btn-primary" %>
+
+<%= form_tag questions_path, method: :get, class: "product-filter-form" do %>
+  <%= select_tag :product_id, options_for_select([["All", ""]].concat(@products.map { |p| [p.name, p.id] }), params[:product_id]), class: "product-select", onchange: "this.form.submit();" %>
+<% end %>
+
+<div class="question-list">
+  <% if @filtered_questions.empty? %>
+    <p>No hay preguntas sobre este producto en el foro.</p>
+  <% else %>
+    <% @filtered_questions.each do |question| %>
+      <div class="question">
+        <p class="question-creator">Creada por: <%= question.user_name %></p>
+        <h1 class="question-title"><%= link_to question.title, question_path(question), class: "question-link" %></h1>
+        <p class="question-product">Producto relacionado: <%= question.product.name %></p>
+        <% if current_user.admin? || current_user.name == question.user_name %>
+          <div class="delete-button">
+            <%= button_to 'Eliminar Pregunta', question_path(question), method: :delete, data: { confirm: '¿Estás seguro que deseas eliminar esta pregunta?' }, class: "btn btn-danger" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<%= stylesheet_link_tag 'preguntas_index', media: 'all' %>
