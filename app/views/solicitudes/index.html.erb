@@ -1,7 +1,7 @@
 <div class="image-links-container">
   <div class="image-link">
     <a href="<%= solicitudes_aceptadas_rechazadas_path %>">
-      <%= image_tag 'aceptado_rechazado.webp', alt: 'Imagen 1' %>
+      <%= image_tag asset_path('aceptado_rechazado.webp'), alt: 'Imagen 1' %>
     </a>
     <p>
       <%= link_to 'Ver solicitudes atendidas', solicitudes_aceptadas_rechazadas_path %>
@@ -10,7 +10,7 @@
 
   <div class="image-link">
     <a href="<%= solicitudes_pendientes_path %>">
-      <%= image_tag 'pendiente.jpeg', alt: 'Imagen 2' %>
+      <%= image_tag asset_path('pendiente.jpeg'), alt: 'Imagen 2' %>
     </a>
     <p>
       <%= link_to 'Ver solicitudes pendientes', solicitudes_pendientes_path %>
